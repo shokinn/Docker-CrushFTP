@@ -28,6 +28,6 @@ echo "# User:		${CRUSH_ADMIN_USER}"
 echo "# Password:	${CRUSH_ADMIN_PASSWORD}"
 echo "########################################"
 
-chmod +x crushftp_init.sh
+chmod +x ${CRUSH_FTP_BASE_DIR}/crushftp_init.sh
 ${CRUSH_FTP_BASE_DIR}/crushftp_init.sh start
 while true; do sleep 86400; done
