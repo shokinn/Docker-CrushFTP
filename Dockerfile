@@ -1,8 +1,8 @@
-#FROM anapsix/alpine-java:8_jdk_unlimited
-FROM openjdk:15-alpine
+FROM openjdk:11-slim-buster
+LABEL maintainer="mail@philip-henning.com"
 
 RUN \
-	apk upgrade --no-cache \
+	apk --no-cache upgrade \
 	&& apk --no-cache add \
 		bash \
 		bash-completion \
@@ -30,3 +30,19 @@ ENV CRUSH_ADMIN_PROTOCOL http
 ENV CRUSH_ADMIN_PORT 8080
 
 EXPOSE 21 443 2222 8080 8888 9022 9090
+
+# Metadata.
+ARG BUILD_DATE
+ARG IMAGE_VERSION
+ARG IMG_TITLE
+
+LABEL \
+	org.opencontainers.image.created="${BUILD_DATE}" \
+	org.opencontainers.image.vendor="Philip Henning" \
+	org.opencontainers.image.authors="Philip Henning <mail@philip-henning.com>" \
+	org.opencontainers.image.title="${IMG_TITLE}" \
+	org.opencontainers.image.description="A minimal docker image to build a MkDocs based documentation" \
+	org.opencontainers.image.version="${IMAGE_VERSION}" \
+	org.opencontainers.image.source="https://github.com/shokinn/Docker-CrushFTP" \
+	org.opencontainers.image.revision="${IMAGE_VERSION}" \
+	org.opencontainers.image.licenses="MIT"
