@@ -1,3 +1,7 @@
+# DEPRECATION NOTICE
+> [!warning]
+> This repository is deprecated and won't be updated anymore!
+
 # CrushFTP for Docker
 
 [![Docker Automated build](https://img.shields.io/docker/automated/shokinn/crushftp.svg)](https://hub.docker.com/r/shokinn/crushftp/)
